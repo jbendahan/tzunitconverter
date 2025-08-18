@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Zone & Unit Converter</title>
+    <title>Time Zone & Unit Converter - Free Online Conversion Tools</title>
+    <meta name="description" content="Free online time zone and unit converter. Convert between different time zones, units of length, weight, temperature, and volume instantly. Easy-to-use conversion tools.">
+    <meta name="keywords" content="time zone converter, unit converter, timezone conversion, measurement converter, length converter, weight converter, temperature converter, volume converter">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yoursite.com">
+    
     <style>
         * {
             margin: 0;
@@ -15,10 +20,37 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav a:hover, .nav a.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         .container {
@@ -26,17 +58,83 @@
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 30px;
+            margin: 0 auto 40px;
             width: 100%;
             max-width: 800px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Ad placeholder styles */
+        .ad-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .ad-leaderboard {
+            height: 90px;
+            max-width: 728px;
+        }
+
+        .ad-rectangle {
+            height: 250px;
+            width: 300px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 300px;
+            margin-left: 20px;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            align-items: flex-start;
+        }
+
+        .converter-container {
+            flex: 1;
+        }
+
         h1 {
             text-align: center;
-            color: #333;
-            margin-bottom: 30px;
+            color: white;
+            margin-bottom: 10px;
             font-size: 2.5rem;
             font-weight: 300;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 400;
+            text-align: center;
         }
 
         .tabs {
@@ -156,6 +254,98 @@
             color: #333;
         }
 
+        .info-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .info-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .info-section p {
+            margin-bottom: 12px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.1);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .page-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .sidebar {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+
         @media (max-width: 600px) {
             .conversion-row {
                 grid-template-columns: 1fr;
@@ -170,82 +360,322 @@
             h1 {
                 font-size: 2rem;
             }
+            
+            .nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Header with Navigation -->
+    <div class="header">
         <h1>Time Zone & Unit Converter</h1>
-        
-        <div class="tabs">
-            <div class="tab active" onclick="switchTab('timezone')">Time Zone</div>
-            <div class="tab" onclick="switchTab('units')">Unit Converter</div>
+        <p class="subtitle">Free Online Conversion Tools for Time Zones and Units</p>
+        <nav class="nav">
+            <a href="#" class="active" onclick="showPage('converter')">Converter</a>
+            <a href="#" onclick="showPage('guide')">How to Use</a>
+            <a href="#" onclick="showPage('about')">About</a>
+            <a href="#" onclick="showPage('contact')">Contact</a>
+            <a href="#" onclick="showPage('privacy')">Privacy</a>
+        </nav>
+    </div>
+
+    <div class="main-container">
+        <!-- Top Ad Space -->
+        <div class="ad-placeholder ad-leaderboard">
+            Google AdSense - Leaderboard Ad (728x90)
         </div>
 
-        <!-- Time Zone Converter -->
-        <div id="timezone-content" class="tab-content active">
-            <div class="converter-section">
-                <div class="form-group">
-                    <label for="source-time">Time:</label>
-                    <input type="datetime-local" id="source-time">
+        <div class="main-content">
+            <!-- Main Converter Content -->
+            <div class="converter-container">
+                <!-- Converter Page -->
+                <div id="converter-content" class="page-content active">
+                    <div class="container">
+                        <h2>Free Online Converters</h2>
+                        
+                        <div class="tabs">
+                            <div class="tab active" onclick="switchTab('timezone')">Time Zone</div>
+                            <div class="tab" onclick="switchTab('units')">Unit Converter</div>
+                        </div>
+
+                        <!-- Time Zone Converter -->
+                        <div id="timezone-content" class="tab-content active">
+                            <div class="converter-section">
+                                <div class="form-group">
+                                    <label for="source-time">Time:</label>
+                                    <input type="datetime-local" id="source-time">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="source-timezone">From Time Zone:</label>
+                                    <select id="source-timezone"></select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="target-timezone">To Time Zone:</label>
+                                    <select id="target-timezone"></select>
+                                </div>
+                                
+                                <div class="time-display">
+                                    <div class="time-zone" id="source-display-zone">Source Time Zone</div>
+                                    <div class="time-value" id="source-display-time">--:--</div>
+                                </div>
+                                
+                                <div class="time-display">
+                                    <div class="time-zone" id="target-display-zone">Target Time Zone</div>
+                                    <div class="time-value" id="target-display-time">--:--</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Unit Converter -->
+                        <div id="units-content" class="tab-content">
+                            <div class="converter-section">
+                                <div class="form-group">
+                                    <label for="unit-category">Category:</label>
+                                    <select id="unit-category" onchange="updateUnits()">
+                                        <option value="length">Length</option>
+                                        <option value="weight">Weight</option>
+                                        <option value="temperature">Temperature</option>
+                                        <option value="volume">Volume</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="conversion-row">
+                                    <div>
+                                        <label for="from-value">From:</label>
+                                        <input type="number" id="from-value" placeholder="Enter value" oninput="convertUnits()">
+                                        <select id="from-unit" onchange="convertUnits()"></select>
+                                    </div>
+                                    
+                                    <div class="arrow">→</div>
+                                    
+                                    <div>
+                                        <label for="to-value">To:</label>
+                                        <input type="number" id="to-value" readonly>
+                                        <select id="to-unit" onchange="convertUnits()"></select>
+                                    </div>
+                                </div>
+                                
+                                <div class="result" id="conversion-result">
+                                    Enter a value to see the conversion
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Features Section -->
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">🌍</div>
+                                <h3>Time Zone Converter</h3>
+                                <p>Convert time between any time zones worldwide. Perfect for international business and travel planning.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📏</div>
+                                <h3>Unit Converter</h3>
+                                <p>Convert between different units of measurement including length, weight, temperature, and volume.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3>Instant Results</h3>
+                                <p>Get conversion results instantly as you type. No waiting, no page reloads, just fast accurate conversions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Use Guide Page -->
+                <div id="guide-content" class="page-content">
+                    <div class="container">
+                        <h2>How to Use Our Conversion Tools</h2>
+                        
+                        <div class="info-section">
+                            <h3>Time Zone Converter</h3>
+                            <p>Converting time between different time zones is simple with our tool:</p>
+                            <p><strong>Step 1:</strong> Select the date and time you want to convert using the datetime picker.</p>
+                            <p><strong>Step 2:</strong> Choose the source time zone from the dropdown menu.</p>
+                            <p><strong>Step 3:</strong> Select your target time zone.</p>
+                            <p><strong>Step 4:</strong> The converted time will appear instantly below, showing both the original and converted times.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Unit Converter</h3>
+                            <p>Our unit converter supports multiple measurement categories:</p>
+                            <p><strong>Length:</strong> Convert between meters, kilometers, feet, inches, miles, and more.</p>
+                            <p><strong>Weight:</strong> Convert kilograms, pounds, ounces, grams, and other weight measurements.</p>
+                            <p><strong>Temperature:</strong> Convert between Celsius, Fahrenheit, and Kelvin.</p>
+                            <p><strong>Volume:</strong> Convert liters, gallons, cups, and other volume measurements.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Tips for Best Results</h3>
+                            <p>• Use the decimal point for precise measurements (e.g., 1.5 instead of 1 1/2)</p>
+                            <p>• Our temperature converter handles negative values for below-freezing temperatures</p>
+                            <p>• Time zone conversions automatically account for daylight saving time</p>
+                            <p>• All conversions are performed in real-time as you type or select options</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Page -->
+                <div id="about-content" class="page-content">
+                    <div class="container">
+                        <h2>About Our Conversion Tools</h2>
+                        
+                        <div class="info-section">
+                            <h3>Our Mission</h3>
+                            <p>We provide free, accurate, and easy-to-use conversion tools for everyone. Whether you're a student, professional, traveler, or just someone who needs quick conversions, our tools are designed to make your life easier.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Accuracy & Reliability</h3>
+                            <p>Our conversion algorithms use internationally recognized standards and formulas. We regularly update our time zone database to ensure accuracy with daylight saving time changes and political updates.</p>
+                            <p>All unit conversions are based on official measurement standards from organizations like NIST (National Institute of Standards and Technology) and the International Bureau of Weights and Measures.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Privacy & Security</h3>
+                            <p>We respect your privacy. Our conversion tools work entirely in your browser - no data is sent to our servers during conversions. We don't store any of your input data or conversion history.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Supported Conversions</h3>
+                            <p><strong>Time Zones:</strong> 25+ major time zones including UTC, EST, PST, GMT, JST, and more.</p>
+                            <p><strong>Length Units:</strong> Metric and Imperial systems including meters, feet, inches, kilometers, miles.</p>
+                            <p><strong>Weight Units:</strong> Kilograms, pounds, ounces, grams, tons, and stones.</p>
+                            <p><strong>Temperature:</strong> Celsius, Fahrenheit, and Kelvin with precise decimal accuracy.</p>
+                            <p><strong>Volume:</strong> Liters, gallons, cups, pints, quarts, and fluid ounces.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Page -->
+                <div id="contact-content" class="page-content">
+                    <div class="container">
+                        <h2>Contact Us</h2>
+                        
+                        <div class="info-section">
+                            <h3>Get in Touch</h3>
+                            <p>Have questions, suggestions, or found an issue with our converters? We'd love to hear from you!</p>
+                            <p><strong>Email:</strong> contact@yourconvertersite.com</p>
+                            <p><strong>Response Time:</strong> We typically respond within 24-48 hours.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Feature Requests</h3>
+                            <p>Want to see a new conversion type or unit added to our tools? Let us know! We're always looking to improve and expand our conversion capabilities based on user feedback.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Bug Reports</h3>
+                            <p>If you encounter any issues or inaccuracies with our conversions, please report them immediately. Include details about:</p>
+                            <p>• What conversion you were attempting</p>
+                            <p>• The values you entered</p>
+                            <p>• What result you expected vs. what you received</p>
+                            <p>• Your browser and device information</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Business Inquiries</h3>
+                            <p>For partnership opportunities, API access, or commercial licensing, please reach out to our business development team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy Page -->
+                <div id="privacy-content" class="page-content">
+                    <div class="container">
+                        <h2>Privacy Policy</h2>
+                        
+                        <div class="info-section">
+                            <h3>Information We Collect</h3>
+                            <p><strong>Usage Data:</strong> We collect anonymous usage statistics to improve our service, including which conversions are most popular and general geographic regions of our users.</p>
+                            <p><strong>Cookies:</strong> We use cookies to remember your preferences and provide personalized ad experiences through Google AdSense.</p>
+                            <p><strong>No Personal Data:</strong> We do not collect, store, or transmit any of your conversion inputs or results.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>How We Use Your Information</h3>
+                            <p>• To provide and maintain our conversion services</p>
+                            <p>• To improve user experience and add new features</p>
+                            <p>• To serve relevant advertisements through Google AdSense</p>
+                            <p>• To analyze usage patterns and optimize performance</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Third-Party Services</h3>
+                            <p><strong>Google AdSense:</strong> We use Google AdSense to display advertisements. Google may use cookies to serve ads based on your visits to this and other websites.</p>
+                            <p><strong>Analytics:</strong> We may use analytics services to understand how our site is used and to improve our services.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3>Your Rights</h3>
+                            <p>You have the right to:</p>
+                            <p>• Opt out of personalized advertising</p>
+                            <p>• Clear your browser cookies at any time</p>
+                            <p>• Request information about data we have collected</p>
+                            <p>• Contact us with privacy-related questions</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <p><strong>Last Updated:</strong> August 2025</p>
+                            <p>We may update this privacy policy from time to time. Any changes will be posted on this page.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar with Ads -->
+            <div class="sidebar">
+                <div class="ad-placeholder ad-rectangle">
+                    Google AdSense - Rectangle Ad (300x250)
                 </div>
                 
-                <div class="form-group">
-                    <label for="source-timezone">From Time Zone:</label>
-                    <select id="source-timezone"></select>
+                <div class="info-section">
+                    <h3>Quick Conversions</h3>
+                    <p><strong>Common Length:</strong></p>
+                    <p>1 meter = 3.28 feet</p>
+                    <p>1 inch = 2.54 cm</p>
+                    <p>1 mile = 1.61 km</p>
+                    
+                    <p><strong>Common Weight:</strong></p>
+                    <p>1 kg = 2.20 lbs</p>
+                    <p>1 lb = 16 oz</p>
+                    
+                    <p><strong>Temperature:</strong></p>
+                    <p>0°C = 32°F</p>
+                    <p>100°C = 212°F</p>
                 </div>
                 
-                <div class="form-group">
-                    <label for="target-timezone">To Time Zone:</label>
-                    <select id="target-timezone"></select>
-                </div>
-                
-                <div class="time-display">
-                    <div class="time-zone" id="source-display-zone">Source Time Zone</div>
-                    <div class="time-value" id="source-display-time">--:--</div>
-                </div>
-                
-                <div class="time-display">
-                    <div class="time-zone" id="target-display-zone">Target Time Zone</div>
-                    <div class="time-value" id="target-display-time">--:--</div>
+                <div class="ad-placeholder ad-rectangle">
+                    Google AdSense - Rectangle Ad (300x250)
                 </div>
             </div>
         </div>
 
-        <!-- Unit Converter -->
-        <div id="units-content" class="tab-content">
-            <div class="converter-section">
-                <div class="form-group">
-                    <label for="unit-category">Category:</label>
-                    <select id="unit-category" onchange="updateUnits()">
-                        <option value="length">Length</option>
-                        <option value="weight">Weight</option>
-                        <option value="temperature">Temperature</option>
-                        <option value="volume">Volume</option>
-                    </select>
-                </div>
-                
-                <div class="conversion-row">
-                    <div>
-                        <label for="from-value">From:</label>
-                        <input type="number" id="from-value" placeholder="Enter value" oninput="convertUnits()">
-                        <select id="from-unit" onchange="convertUnits()"></select>
-                    </div>
-                    
-                    <div class="arrow">→</div>
-                    
-                    <div>
-                        <label for="to-value">To:</label>
-                        <input type="number" id="to-value" readonly>
-                        <select id="to-unit" onchange="convertUnits()"></select>
-                    </div>
-                </div>
-                
-                <div class="result" id="conversion-result">
-                    Enter a value to see the conversion
-                </div>
-            </div>
+        <!-- Bottom Ad Space -->
+        <div class="ad-placeholder ad-leaderboard">
+            Google AdSense - Leaderboard Ad (728x90)
         </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-links">
+            <a href="#" onclick="showPage('about')">About</a>
+            <a href="#" onclick="showPage('contact')">Contact</a>
+            <a href="#" onclick="showPage('privacy')">Privacy Policy</a>
+            <a href="#" onclick="showPage('guide')">How to Use</a>
+        </div>
+        <p>&copy; 2025 Time Zone & Unit Converter. All rights reserved.</p>
+        <p>Free online conversion tools for time zones and unit measurements.</p>
     </div>
 
     <script>
@@ -325,6 +755,16 @@
             document.getElementById('source-timezone').addEventListener('change', convertTime);
             document.getElementById('target-timezone').addEventListener('change', convertTime);
         });
+
+        function showPage(page) {
+            // Update navigation
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update page content
+            document.querySelectorAll('.page-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(`${page}-content`).classList.add('active');
+        }
 
         function switchTab(tab) {
             // Update tab buttons
